@@ -1,2 +1,3 @@
 # Coding-for-practice
-This is my first git reposetry
+This is my first git repository
+Auther by Ahmad
