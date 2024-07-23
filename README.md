@@ -1,3 +1,4 @@
 # Coding-for-practice
 This is my first git repository
-Auther by Ahmad
+<br>
+Author by Ahmad
