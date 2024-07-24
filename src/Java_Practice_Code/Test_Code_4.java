@@ -9,6 +9,7 @@ public class Test_Code_4 {
         float f = 123.3f;
         int h = 10;
         int i = 10;
+        int m = h*i;
         boolean g = true;
         long l = 345678765;
         System.out.println(a);
@@ -19,6 +20,7 @@ public class Test_Code_4 {
         System.out.println(h);
         System.out.println(g);
         System.out.println(l);
+        System.out.println(m);
 
 
     }
