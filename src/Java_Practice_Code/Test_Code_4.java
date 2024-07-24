@@ -10,6 +10,7 @@ public class Test_Code_4 {
         int h = 10;
         int i = 10;
         boolean g = true;
+        long l = 345678765;
         System.out.println(a);
         System.out.println(b);
         System.out.println(d);
@@ -17,6 +18,7 @@ public class Test_Code_4 {
         System.out.println(f);
         System.out.println(h);
         System.out.println(g);
+        System.out.println(l);
 
 
     }
