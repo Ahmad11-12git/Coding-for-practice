@@ -2,7 +2,7 @@ package Java_Practice_Code;
 
 import java.util.Scanner;
 
-public class Test_Cade_24 {
+public class Test_Code_24 {
     public static void main(String[] args) {
         //Largest of Three Numbers
         //Write a program that finds the largest of three numbers using nested if-else statements.
