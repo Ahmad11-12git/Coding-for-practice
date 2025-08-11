@@ -22,7 +22,7 @@ public class AdminUserTest {
         driver = DriverFactory.initDriver();
         util = new ElementUtil(driver, 20);
 
-        String environment = " SIT";
+        String environment = "SIT";
         driver.get(ConfigReader.get(environment + "baseURL"));
     }
 
@@ -32,13 +32,13 @@ public class AdminUserTest {
         configurePricing();
         String fetchedUserId = fetchAndStoreUserIdFromUI();
         loadCreditPoints(fetchedUserId);
-//        reverseLoadedCreditPoints();
+        reverseLoadedCreditPoints();
         logOut();
     }
 
     private void loginAsSuperUser() throws Exception {
         String userId = ConfigReader.get("UserID");
-        String password = ConfigReader.get(" SITPassword");
+        String password = ConfigReader.get("SITPassword");
         new LoginPage(driver).login(userId, password);
         new TwoFactorAuthPage(driver).enterOtp();
         util.waitAndClick(By.xpath("//button[text()='Submit']"));
@@ -49,7 +49,6 @@ public class AdminUserTest {
     private void configurePricing() throws Exception {
         util.waitAndClick(By.xpath("//p[text()='User Management']"));
         util.waitAndClick(By.xpath("//p[text()='Pricing']"));
-        //util.waitAndClick(By.xpath("//button[text()='Filters']"));
         util.waitForSeconds(5);
         WebElement SuperUserName = driver.findElement(By.xpath("//label[text()='Search In']/following::input[1]"));
         SuperUserName.click();
@@ -60,17 +59,15 @@ public class AdminUserTest {
         if (latestUserDetails != null) {
             String userFullName = latestUserDetails[0]; // userFullName from CSV
             System.out.println("Using User Full Name from CSV: " + userFullName);
-            util.waitAndSendKeys(By.xpath("//input[@id='userValue']"),userFullName);
+            util.waitAndSendKeys(By.xpath("//input[@id='userValue']"), userFullName);
         } else {
             System.out.println("No User Full Name found in CSV, sending default text");
         }
 
         util.waitAndClick(By.xpath("//button[text()='Search']"));
         util.waitForSeconds(3);
-
         util.waitAndClick(By.xpath("//table/tbody/tr[1]/td[11]//button/span[1]/img"));
         util.waitAndClick(By.xpath("//li[text()='Configure Pricing']"));
-
         util.waitForVisibility(By.xpath("//span[text()='Set pricing']"));
         util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter Credit Point Value']"), "0.25");
         util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter Setup Fee']"), "10000");
@@ -100,7 +97,6 @@ public class AdminUserTest {
         util.waitAndClick(By.xpath("//p[text()='Load Credit Points']"));
         util.waitForSeconds(3);
         util.waitAndClick(By.xpath("//button[text()='Load Credit Point']"));
-
         util.waitForVisibility(By.xpath("//label[text()='Select Super User']"));
         WebElement entityUserInput = driver.findElement(By.xpath("//label[text()='Select Super User']/following::input[1]"));
         entityUserInput.click();

@@ -18,6 +18,4 @@ public class RobotUtil {
     public static void pressDownAndEnter(Robot robot) throws InterruptedException {
         pressDownAndEnter(robot, 5000);  // Default 2 seconds
     }
-
-
 }

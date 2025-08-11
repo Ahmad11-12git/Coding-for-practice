@@ -111,7 +111,4 @@ public class ElementUtil {
             return false;
         }
     }
-
-
-
 }

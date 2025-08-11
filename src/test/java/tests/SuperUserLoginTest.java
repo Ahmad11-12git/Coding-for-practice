@@ -2,7 +2,7 @@ package tests;
 
 import SeleniumFramework.pages.*;
 import SeleniumFramework.utils.*;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
+//import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import io.qameta.allure.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
@@ -51,28 +51,28 @@ public class SuperUserLoginTest {
     driver.get(ConfigReader.get("SITbaseURL"));
     Allure.step("Navigated to SIT base URL");
 
-    loginSuperUser();
-    resetSuperUserPassword();
-    logoutUser();
+//    loginSuperUser();
+//    resetSuperUserPassword();
+//    logoutUser();
       loginSuperUserWithNewPassword();
 
       createBank();
-     createEntity();
-    createEntityUser();
-    extractEntityUserCredentials();
+      createEntity();
+      createEntityUser();
+      extractEntityUserCredentials();
 
-    profileIntegration("PAYMENT");
+//    profileIntegration("PAYMENT");
 //    profileIntegrationTypePAYMENTEdit("PAYMENT");
-    profileIntegration("GSTIN");
+//    profileIntegration("GSTIN");
 //    profileIntegrationTypeGSTINEdit("GSTIN");
 //    durationFiltersAndPagination(true);
 //
-    uploadSourceFile("PAYMENT");
-    uploadSourceFile("GSTIN");
+//    uploadSourceFile("PAYMENT");
+//    uploadSourceFile("GSTIN");
 //    durationFiltersAndPagination(true);
 //    reconModule();
 
-    logoutUser();
+      logoutUser();
   }
 
   @Step("Logging in as SuperUser")

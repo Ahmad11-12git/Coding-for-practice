@@ -22,6 +22,4 @@ public class ConfigReader {
         if (prop == null) loadConfig();
         return prop.getProperty(key);
     }
-
-
 }

@@ -37,16 +37,16 @@ public class SignUpSuperUser {
     @Test(description = "Sign up SuperUser and capture credentials from email")
     @Step("Perform superuser signup and email credentials extraction")
     public void signUpSuperUserAndCaptureCredentials() throws InterruptedException {
-//        for (int i = 1; i <= 3; i++) {
-//            System.out.println("Run #" + i + " starting...");
+//      for (int i = 1; i <= 3; i++) {
+//      System.out.println("Run #" + i + " starting...");
 
-            initializeUserData();
-            fillSignUpForm();
-            submitForm();
+        initializeUserData();
+        fillSignUpForm();
+        submitForm();
         openMailinatorInbox();
         extractAndSaveCredentials();
 
-//            System.out.println("Run #" + i + " completed.");
+//      System.out.println("Run #" + i + " completed.");
 //        }
     }
 
