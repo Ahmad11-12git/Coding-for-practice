@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Reconciliation Suite">
+    <test name="Login Test">
+        <classes>
+            <class name="tests.SignUpSuperUser" />
+            <class name="tests.SuperUserLoginTest" />
+            <class name="tests.AdminUserTest" />
+            <class name="tests.EntityLoginTest" />
+        </classes>
+    </test>
+</suite>
