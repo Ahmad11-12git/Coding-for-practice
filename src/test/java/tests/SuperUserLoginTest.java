@@ -2,6 +2,7 @@ package tests;
 
 import SeleniumFramework.pages.*;
 import SeleniumFramework.utils.*;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import io.qameta.allure.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
@@ -126,6 +127,7 @@ public class SuperUserLoginTest {
 
   @Step("Creating a Bank")
   private void createBank() throws Exception {
+    util.waitForSeconds(3);
     WebElement settingElement = util.waitForVisibility(By.xpath("//p[text()='Setting']"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", settingElement);
     util.isElementVisible(By.xpath("//p[text()='Setting']"));
