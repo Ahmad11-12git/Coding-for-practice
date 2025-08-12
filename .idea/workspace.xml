@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="Test">
+    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/BankList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/BankList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/EntityList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/EntityList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/EntityUserCredential.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/EntityUserCredential.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/NewCredential.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/NewCredential.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/User_Ids.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/User_Ids.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/AllureUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/AllureUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ConfigReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/CredentialUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/CredentialUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ElementUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ElementUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/RobotUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/RobotUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +93,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "inlay.hints"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -124,47 +108,11 @@
       <recent name="D:\Reconciliation\Reconciliation\InputData" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SuperUserLoginTest.superUserFlow">
-    <configuration name="AdminUserTest.adminUserFlow" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Reconciliation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AdminUserTest" />
-      <option name="METHOD_NAME" value="adminUserFlow" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.SignUpSuperUser.signUpSuperUserAndCaptureCredentials">
     <configuration name="D:/Reconciliation/Reconciliation/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Reconciliation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntityLoginTest.loginAndUpdatePasswordForEntityUser" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Reconciliation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.EntityLoginTest" />
-      <option name="METHOD_NAME" value="loginAndUpdatePasswordForEntityUser" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -183,6 +131,40 @@
       <option name="MAIN_CLASS_NAME" value="tests.SignUpSuperUser" />
       <option name="METHOD_NAME" value="signUpSuperUserAndCaptureCredentials" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuperUserLoginTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Reconciliation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SuperUserLoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuperUserLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Reconciliation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SuperUserLoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -209,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SuperUserLoginTest.superUserFlow" />
-        <item itemvalue="TestNG.AdminUserTest.adminUserFlow" />
-        <item itemvalue="TestNG.EntityLoginTest.loginAndUpdatePasswordForEntityUser" />
-        <item itemvalue="TestNG.D:/Reconciliation/Reconciliation/testng.xml" />
         <item itemvalue="TestNG.SignUpSuperUser.signUpSuperUserAndCaptureCredentials" />
+        <item itemvalue="TestNG.D:/Reconciliation/Reconciliation/testng.xml" />
+        <item itemvalue="TestNG.SuperUserLoginTest (1)" />
+        <item itemvalue="TestNG.SuperUserLoginTest.superUserFlow" />
+        <item itemvalue="TestNG.SuperUserLoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -258,31 +240,7 @@
       <option name="project" value="LOCAL" />
       <updated>1754912215630</updated>
     </task>
-    <task id="LOCAL-00005" summary="Test">
-      <option name="closed" value="true" />
-      <created>1754912772652</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1754912772652</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Test">
-      <option name="closed" value="true" />
-      <created>1754912799665</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1754912799666</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Test">
-      <option name="closed" value="true" />
-      <created>1754913666938</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1754913666938</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +256,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded" />
-    <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded" />
   </component>
 </project>
