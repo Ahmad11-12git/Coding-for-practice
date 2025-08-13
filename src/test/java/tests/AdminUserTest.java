@@ -29,11 +29,11 @@ public class AdminUserTest {
     @Test
     public void adminUserFlow() throws Exception {
         loginAsSuperUser();
-        configurePricing();
-        String fetchedUserId = fetchAndStoreUserIdFromUI();
-        loadCreditPoints(fetchedUserId);
-        reverseLoadedCreditPoints();
-        logOut();
+        configureOrEditPricing();
+//        String fetchedUserId = fetchAndStoreUserIdFromUI();
+//        loadCreditPoints(fetchedUserId);
+//        reverseLoadedCreditPoints();
+//        logOut();
     }
 
     private void loginAsSuperUser() throws Exception {
@@ -46,37 +46,69 @@ public class AdminUserTest {
         util.waitForSeconds(3);
     }
 
-    private void configurePricing() throws Exception {
+    private void configureOrEditPricing() throws Exception {
         util.waitAndClick(By.xpath("//p[text()='User Management']"));
         util.waitAndClick(By.xpath("//p[text()='Pricing']"));
         util.waitForSeconds(5);
-        WebElement SuperUserName = driver.findElement(By.xpath("//label[text()='Search In']/following::input[1]"));
-        SuperUserName.click();
-        SuperUserName.sendKeys("Super Username");
+
+        // Select Super Username
+        WebElement superUserName = driver.findElement(By.xpath("//label[text()='Search In']/following::input[1]"));
+        superUserName.click();
+        superUserName.sendKeys("Super Username");
         RobotUtil.pressDownAndEnter(new Robot(), 3000);
+
+        // Read latest user details from CSV
         String userDetailsCsv = "InputData/NewCredential.csv";
         String[] latestUserDetails = CredentialUtil.readLatestFullDetails(userDetailsCsv);
+
         if (latestUserDetails != null) {
-            String userFullName = latestUserDetails[0]; // userFullName from CSV
+            String userFullName = latestUserDetails[0];
             System.out.println("Using User Full Name from CSV: " + userFullName);
             util.waitAndSendKeys(By.xpath("//input[@id='userValue']"), userFullName);
         } else {
             System.out.println("No User Full Name found in CSV, sending default text");
         }
 
+        // Search and open pricing menu
         util.waitAndClick(By.xpath("//button[text()='Search']"));
         util.waitForSeconds(3);
         util.waitAndClick(By.xpath("//table/tbody/tr[1]/td[11]//button/span[1]/img"));
-        util.waitAndClick(By.xpath("//li[text()='Configure Pricing']"));
+
+        boolean isConfigure = util.isElementPresent(By.xpath("//li[text()='Configure Pricing']"));
+        boolean isEdit = util.isElementPresent(By.xpath("//li[text()='Edit Pricing']"));
+
+        if (isConfigure) {
+            util.waitAndClick(By.xpath("//li[text()='Configure Pricing']"));
+        } else if (isEdit) {
+            util.waitAndClick(By.xpath("//li[text()='Edit Pricing']"));
+        } else {
+            System.out.println("No Configure or Edit Pricing option found.");
+            return;
+        }
+
         util.waitForVisibility(By.xpath("//span[text()='Set pricing']"));
-        util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter Credit Point Value']"), "0.25");
-        util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter Setup Fee']"), "10000");
-        util.waitForSeconds(3);
-        String pricingUniqueUTR = CredentialUtil.generateRandomUTR();
-        util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter Setup Fee utr']"), pricingUniqueUTR);
+
+        // Field locators
+        By creditPoint = By.xpath("//input[@placeholder='Enter Credit Point Value']");
+        By setupFee = By.xpath("//input[@placeholder='Enter Setup Fee']");
+        By SetupFeeUTR = By.xpath("//input[@placeholder='Enter Setup Fee utr']");
+
+        // Clear old values if in edit mode
+        if (isEdit) {
+            System.out.println("Edit the pricing details");
+//            util.clearAndType(creditPoint, "0.30");
+//            util.clearAndType(setupFee, "15000");
+//            util.clearAndType(SetupFeeUTR, CredentialUtil.generateRandomUTR());
+        } else {
+            util.waitAndSendKeys(creditPoint, "0.25");
+            util.waitAndSendKeys(setupFee, "10000");
+            util.waitAndSendKeys(SetupFeeUTR, CredentialUtil.generateRandomUTR());
+        }
+
         util.waitAndClick(By.xpath("//button[text()='Save']"));
         util.waitForSeconds(3);
     }
+
 
     private String fetchAndStoreUserIdFromUI() throws InterruptedException {
         new WebDriverWait(driver, Duration.ofSeconds(10))

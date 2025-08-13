@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded">
+    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InputData/EntityList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/EntityList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/5a29be49-22f5-4b52-9ee4-fa54aa1d7879-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/5c3e4f42-8395-48e4-8347-968c28b06935-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/b7101610-2725-47a2-b100-0e233ef40f65-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/df3ee489-e0ce-4ff2-881f-1aacbf7e251a-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ElementUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeleniumFramework/utils/ElementUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +64,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.AdminLoginTest.loginTest.executor": "Run",
     "TestNG.AdminUserTest.adminUserFlow.executor": "Run",
-    "TestNG.AdminUserTest.executor": "Run",
+    "TestNG.AdminUserTest.executor": "Debug",
     "TestNG.AdminUserTest.superUserFlow.executor": "Run",
     "TestNG.D:/Reconciliation/Reconciliation/testng.xml.executor": "Run",
     "TestNG.EntityLoginTest.executor": "Run",
@@ -108,7 +117,42 @@
       <recent name="D:\Reconciliation\Reconciliation\InputData" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpSuperUser.signUpSuperUserAndCaptureCredentials">
+  <component name="RunManager" selected="TestNG.SuperUserLoginTest.superUserFlow">
+    <configuration name="AdminUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Reconciliation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AdminUserTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminUserTest.adminUserFlow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Reconciliation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AdminUserTest" />
+      <option name="METHOD_NAME" value="adminUserFlow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="D:/Reconciliation/Reconciliation/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Reconciliation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -137,40 +181,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuperUserLoginTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Reconciliation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SuperUserLoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SuperUserLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Reconciliation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SuperUserLoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SuperUserLoginTest.superUserFlow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Reconciliation" />
       <extension name="coverage">
@@ -191,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SignUpSuperUser.signUpSuperUserAndCaptureCredentials" />
-        <item itemvalue="TestNG.D:/Reconciliation/Reconciliation/testng.xml" />
-        <item itemvalue="TestNG.SuperUserLoginTest (1)" />
         <item itemvalue="TestNG.SuperUserLoginTest.superUserFlow" />
-        <item itemvalue="TestNG.SuperUserLoginTest" />
+        <item itemvalue="TestNG.SignUpSuperUser.signUpSuperUserAndCaptureCredentials" />
+        <item itemvalue="TestNG.AdminUserTest" />
+        <item itemvalue="TestNG.AdminUserTest.adminUserFlow" />
+        <item itemvalue="TestNG.D:/Reconciliation/Reconciliation/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +250,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754912215630</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1754981990147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754981990147</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1754982040878</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754982040878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,6 +282,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconciliation Super User Onboarding, Super User Login, Bank creation, Entity Creation, Entity User creation,Profile Integration, Source Data uploaded, Login Admin Portal, Add Pricing, Credit point Loaded, Individual User login, Profile Integration, Recon Uploaded" />
+    <MESSAGE value="Changes is done in CredentialUtil" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>

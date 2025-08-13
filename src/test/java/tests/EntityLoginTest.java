@@ -158,9 +158,9 @@ public class EntityLoginTest {
             actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(5));
             System.out.println("JS-based drag and drop for PAYMENT completed");
         } else {
-            actionUtil.jsDragAndDrop(sourceAG, dropTargets.get(0));
+            actionUtil.jsDragAndDrop(sourcePG, dropTargets.get(0));
             util.waitForSeconds(3);
-            actionUtil.jsDragAndDrop(sourcePG, dropTargets.get(1));
+            actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(1));
             util.waitForSeconds(3);
 //            actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(2));
             System.out.println("JS-based drag and drop for GSTIN completed");

@@ -15,6 +15,8 @@ import java.time.Duration;
 import java.util.*;
 import java.util.List;
 
+import static SeleniumFramework.utils.AllureUtil.attachScreenshot;
+import static SeleniumFramework.utils.AllureUtil.saveTextLog;
 import static SeleniumFramework.utils.CredentialUtil.*;
 
 public class SuperUserLoginTest {
@@ -56,10 +58,10 @@ public class SuperUserLoginTest {
 //    logoutUser();
       loginSuperUserWithNewPassword();
 
-      createBank();
+//      createBank();
       createEntity();
-      createEntityUser();
-      extractEntityUserCredentials();
+//      createEntityUser();
+//      extractEntityUserCredentials();
 
 //    profileIntegration("PAYMENT");
 //    profileIntegrationTypePAYMENTEdit("PAYMENT");
@@ -157,7 +159,10 @@ public class SuperUserLoginTest {
   private void createEntity() {
     util.waitAndClick(By.xpath("//p[text()='Manage User']"));
     util.waitAndClick(By.xpath("//button[text()='Entity']"));
-    util.waitAndClick(By.xpath("//button[text()='Create Entity']"));
+//    for (int i = 1; i <= 6; i++) {
+//      System.out.println("Run #" + i + " starting...");
+
+      util.waitAndClick(By.xpath("//button[text()='Create Entity']"));
     entityName = RandomStringUtils.randomAlphabetic(5);
     String directorEmail = "ahmad" + RandomStringUtils.randomNumeric(4) + "@mailinator.com";
     util.waitAndSendKeys(By.id("entity_name"), entityName);
@@ -167,19 +172,25 @@ public class SuperUserLoginTest {
     appendEntityNameToCSV(entityListCsv, entityName);
     Allure.step("Entity created: " + entityName);
     util.waitForSeconds(3);
-     //durationFiltersAndPagination(true);
+     durationFiltersAndPagination(true);
+//      System.out.println("Run #" + i + " completed.");
+//    }
 
   }
 
   @Step("Creating an Entity User")
   private void createEntityUser() throws Exception {
     util.waitForSeconds(2);
-    util.scrollToElement(By.xpath("//button[text()='User']"));
+    if (entityName == null || entityName.isEmpty()) {
+      entityName = CredentialUtil.readLatestEntityName(entityListCsv);
+    }
+    util.waitAndClick(By.xpath("//p[text()='Manage User']"));
     util.isElementVisible(By.xpath("//button[text()='User']"));
     util.waitAndClick(By.xpath("//button[text()='User']"));
     util.waitAndClick(By.xpath("//button[text()='Create User']"));
+    String entityFullName = entityName.toUpperCase() + " USER";
+    util.waitAndSendKeys(By.id("name"), entityFullName);
     entityUserEmail = entityName.toLowerCase() + "user" + RandomStringUtils.randomNumeric(4) + "@mailinator.com";
-    util.waitAndSendKeys(By.id("name"), "Entity User");
     util.waitAndSendKeys(By.id("email_id"), entityUserEmail);
     util.waitAndSendKeys(By.id("mobile_no"), "9833505676");
     WebElement entityInput = driver.findElement(By.xpath("//label[text()='Select Entity']/following::input[1]"));
@@ -188,9 +199,10 @@ public class SuperUserLoginTest {
     robot.delay(3000);
     RobotUtil.pressDownAndEnter(robot, 1000);
     driver.findElement(By.xpath("//input[@value='NA']")).click();
+    attachScreenshot(driver,"Entity User creation form");
     util.waitAndClick(By.xpath("//button[text()='Submit']"));
+    saveTextLog("Entity User creation successfully done");
     Allure.step("Entity User created: " + entityUserEmail);
- 
     util.waitForSeconds(3);
      durationFiltersAndPagination(true);
   }

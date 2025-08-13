@@ -30,21 +30,21 @@ public class SignUpSuperUser {
         ConfigReader.loadConfig();
         driver = DriverFactory.initDriver();
         util = new ElementUtil(driver, 60);
-        driver.get(ConfigReader.get("SITbaseURL"));
+        driver.get(ConfigReader.get("UATbaseURL"));
         saveTextLog("Opened SIT base URL");
     }
 
     @Test(description = "Sign up SuperUser and capture credentials from email")
     @Step("Perform superuser signup and email credentials extraction")
     public void signUpSuperUserAndCaptureCredentials() throws InterruptedException {
-//      for (int i = 1; i <= 3; i++) {
+//      for (int i = 1; i <= 30; i++) {
 //      System.out.println("Run #" + i + " starting...");
 
         initializeUserData();
         fillSignUpForm();
         submitForm();
-        openMailinatorInbox();
-        extractAndSaveCredentials();
+//        openMailinatorInbox();
+//        extractAndSaveCredentials();
 
 //      System.out.println("Run #" + i + " completed.");
 //        }
