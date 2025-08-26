@@ -1,0 +1,1 @@
+{"uuid":"e81cb18d-cf64-40b1-87fc-9feb34575a6a","name":"tests.EntityLoginTest.setup","children":["50e7d352-221a-439d-a4cc-2bc6510bc372"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1755769414475,"stop":1755769418681}],"afters":[],"start":1755769414468,"stop":1755769418682}
