@@ -11,6 +11,7 @@ import org.testng.annotations.*;
 import java.io.*;
 import java.time.Duration;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static SeleniumFramework.utils.AllureUtil.attachScreenshot;
 import static SeleniumFramework.utils.AllureUtil.saveTextLog;
@@ -30,7 +31,7 @@ public class SignUpSuperUser {
         ConfigReader.loadConfig();
         driver = DriverFactory.initDriver();
         util = new ElementUtil(driver, 60);
-        driver.get(ConfigReader.get("UATbaseURL"));
+        driver.get(ConfigReader.get("SITbaseURL"));
         saveTextLog("Opened SIT base URL");
     }
 
@@ -43,8 +44,8 @@ public class SignUpSuperUser {
         initializeUserData();
         fillSignUpForm();
         submitForm();
-//        openMailinatorInbox();
-//        extractAndSaveCredentials();
+        openMailinatorInbox();
+        extractAndSaveCredentials();
 
 //      System.out.println("Run #" + i + " completed.");
 //        }
@@ -67,13 +68,16 @@ public class SignUpSuperUser {
         saveTextLog("Clicked Sign Up link");
 
         util.waitAndSendKeys(By.id("name"), userFullName);
-        saveTextLog("Entered name");
+        saveTextLog("Entered name: "+userFullName);
 
         util.waitAndSendKeys(By.id("email"), randomEmail);
-        saveTextLog("Entered email");
+        saveTextLog("Entered email: "+randomEmail);
 
-        util.waitAndSendKeys(By.id("mobile_no"), "9876543211");
-        saveTextLog("Entered mobile number");
+        long number = ThreadLocalRandom.current().nextLong(6000000000L, 9999999999L);
+        String mobileNumber = String.valueOf(number);
+
+        util.waitAndSendKeys(By.id("mobile_no"), mobileNumber);
+        saveTextLog("Entered mobile number: " + mobileNumber);
 
         util.waitAndClick(By.xpath("//*[@id='__next']/div[1]/div[2]/div/form/div[4]/div/div/div"));
         util.waitAndClick(By.xpath("//li[text()='Super User']"));
@@ -168,4 +172,6 @@ public class SignUpSuperUser {
     public void tearDown() {
         if (driver != null) driver.quit();
     }
+
+
 }

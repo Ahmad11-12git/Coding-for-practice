@@ -43,10 +43,10 @@ public class EntityLoginTest {
 //        logout();
         loginWithNewPassword();
 //        performProfileIntegration("PAYMENT");
-        performProfileIntegration("GSTIN");
+//        performProfileIntegration("GSTIN");
         uploadReconFile("PAYMENT");
         uploadReconFile("GSTIN");
-        logout();
+//        logout();
     }
 
     private void loginEntityUser() {
@@ -162,7 +162,7 @@ public class EntityLoginTest {
             util.waitForSeconds(3);
             actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(1));
             util.waitForSeconds(3);
-//            actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(2));
+            actionUtil.jsDragAndDrop(sourceAmount, dropTargets.get(2));
             System.out.println("JS-based drag and drop for GSTIN completed");
         }
         util.waitAndClick(By.xpath("//button[text()='Submit']"));

@@ -2,7 +2,6 @@ package tests;
 
 import SeleniumFramework.pages.*;
 import SeleniumFramework.utils.*;
-//import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import io.qameta.allure.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
@@ -14,6 +13,7 @@ import java.awt.*;
 import java.time.Duration;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static SeleniumFramework.utils.AllureUtil.attachScreenshot;
 import static SeleniumFramework.utils.AllureUtil.saveTextLog;
@@ -30,8 +30,6 @@ public class SuperUserLoginTest {
   private final String bankListCsv = "InputData/BankList.csv";
   private final String entityListCsv = "InputData/EntityList.csv";
   private final String rconIdsCsv = "InputData/Recon_Ids.csv";
-
-
 
 
   private String entityName;
@@ -53,25 +51,25 @@ public class SuperUserLoginTest {
     driver.get(ConfigReader.get("SITbaseURL"));
     Allure.step("Navigated to SIT base URL");
 
-//    loginSuperUser();
-//    resetSuperUserPassword();
-//    logoutUser();
+    loginSuperUser();
+    resetSuperUserPassword();
+    logoutUser();
       loginSuperUserWithNewPassword();
 
-//      createBank();
+      createBank();
       createEntity();
-//      createEntityUser();
-//      extractEntityUserCredentials();
+      createEntityUser();
+      extractEntityUserCredentials();
 
-//    profileIntegration("PAYMENT");
-//    profileIntegrationTypePAYMENTEdit("PAYMENT");
-//    profileIntegration("GSTIN");
-//    profileIntegrationTypeGSTINEdit("GSTIN");
-//    durationFiltersAndPagination(true);
-//
-//    uploadSourceFile("PAYMENT");
-//    uploadSourceFile("GSTIN");
-//    durationFiltersAndPagination(true);
+    profileIntegration("PAYMENT");
+    profileIntegrationTypePAYMENTEdit("PAYMENT");
+    profileIntegration("GSTIN");
+    profileIntegrationTypeGSTINEdit("GSTIN");
+    durationFiltersAndPagination(true);
+
+    uploadSourceFile("PAYMENT");
+    uploadSourceFile("GSTIN");
+    durationFiltersAndPagination(true);
 //    reconModule();
 
       logoutUser();
@@ -79,6 +77,7 @@ public class SuperUserLoginTest {
 
   @Step("Logging in as SuperUser")
   private void loginSuperUser() throws Exception {
+    saveTextLog("------------------User login with new credential------------------");
     String[] creds = readLatestCredentialsSuperUser(superUserCsv);
     if (creds == null || creds.length < 3) throw new RuntimeException("No Superuser credentials found");
     String userId = creds[1];
@@ -91,6 +90,7 @@ public class SuperUserLoginTest {
 
   @Step("Resetting SuperUser Password")
   private void resetSuperUserPassword() throws Exception {
+    saveTextLog("------------------Super User Password Reset------------------");
     String[] creds = readLatestCredentialsSuperUser(superUserCsv);
     String userFullName = creds[0];
     String userId = creds[1];
@@ -103,6 +103,7 @@ public class SuperUserLoginTest {
 
   @Step("Logging out User")
   private void logoutUser() {
+    saveTextLog("------------------Super User Log Out------------------");
     try {
       util.waitAndClick(By.xpath("(//div[@class='profile-info-logo-title-wrapper MuiBox-root css-1ircn5c'])[1]"));
       util.waitAndClick(By.xpath("//p[text()='Logout']"));
@@ -114,6 +115,7 @@ public class SuperUserLoginTest {
 
   @Step("Logging in SuperUser with updated password")
   private void loginSuperUserWithNewPassword() throws Exception {
+    saveTextLog("------------------Super User Log in with updated password------------------");
     String[] creds = readLatestCredentialsSuperUser(superUserCsv);
     String userId = creds[1];
     String newPassword = creds[2];
@@ -125,54 +127,75 @@ public class SuperUserLoginTest {
     Allure.step("Logged in with updated password for userId: " + userId);
   }
 
-
-
   @Step("Creating a Bank")
   private void createBank() throws Exception {
+    saveTextLog("------------------Bank Configuration------------------");
     util.waitForSeconds(3);
     WebElement settingElement = util.waitForVisibility(By.xpath("//p[text()='Setting']"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", settingElement);
     util.isElementVisible(By.xpath("//p[text()='Setting']"));
     util.waitAndClick(By.xpath("//p[text()='Setting']"));
+    saveTextLog("Click on Setting Tab");
     util.waitAndClick(By.xpath("(//p[text()='Bank Configuration'])[1]"));
+    saveTextLog("Click on Bank Configuration sub tab");
     util.waitAndClick(By.xpath("//button[text()='Add Bank']"));
+    saveTextLog("Click on Add Bank Button");
     String bankName = RandomStringUtils.randomAlphabetic(4).toUpperCase() + " BANK";
     util.waitAndSendKeys(By.id("bank_name"), bankName);
+    saveTextLog("Enter Bank Name: "+bankName);
     util.waitAndClick(By.xpath("//button[text()='Submit']"));
+    attachScreenshot(driver, "Ban configuration");
+    saveTextLog("Click on Submit Button");
     appendBankNameToCSV(bankListCsv, bankName);
     Allure.step("Bank created: " + bankName);
     util.waitForSeconds(5);
      durationFiltersAndPagination(false);
+    saveTextLog("Duration Filter Functionality");
     util.scrollToElement(By.xpath("//input[@placeholder='Enter a Bank Name']"));
     util.waitAndSendKeys(By.xpath("//input[@placeholder='Enter a Bank Name']"),bankName);
+    saveTextLog("In search text field passing the bank name: "+ bankName);
     util.waitAndClick(By.xpath("//button[text()='Search']"));
+    saveTextLog("Click on Search Button");
     util.waitForSeconds(5);
     util.waitAndClick(By.xpath("//img[@alt='vertical-dot-button']\n"));
+    saveTextLog("Click on Action Button");
     util.waitForSeconds(3);
     util.waitAndClick(By.xpath("//li[text()='View Details']"));
+    saveTextLog("Click on View Details Button");
     util.waitForSeconds(3);
+    attachScreenshot(driver, "View the Bank details");
     util.waitAndClick(By.xpath("//button[text()='Cancel']"));
-
+    saveTextLog("Click on cancel Button");
   }
 
   @Step("Creating an Entity")
   private void createEntity() {
+    saveTextLog("------------------Entity Creation------------------");
     util.waitAndClick(By.xpath("//p[text()='Manage User']"));
+    saveTextLog("Click on Manage User Tab");
     util.waitAndClick(By.xpath("//button[text()='Entity']"));
+    saveTextLog("Click on Entity sub Tab");
 //    for (int i = 1; i <= 6; i++) {
 //      System.out.println("Run #" + i + " starting...");
 
       util.waitAndClick(By.xpath("//button[text()='Create Entity']"));
+    saveTextLog("Click on Create Entity Button");
     entityName = RandomStringUtils.randomAlphabetic(5);
     String directorEmail = "ahmad" + RandomStringUtils.randomNumeric(4) + "@mailinator.com";
     util.waitAndSendKeys(By.id("entity_name"), entityName);
+    saveTextLog("Enter entity name: "+entityName);
     util.waitAndSendKeys(By.id("email_id"), entityName + " User");
+    saveTextLog("Enter entity user name: "+entityName + " User");
     util.waitAndSendKeys(By.id("director_mail"), directorEmail);
+    saveTextLog("Enter director mail id: "+directorEmail);
     util.waitAndClick(By.xpath("//button[text()='Submit']"));
+    attachScreenshot(driver,"Entity creation form details");
+    saveTextLog("Click on Submit button");
     appendEntityNameToCSV(entityListCsv, entityName);
     Allure.step("Entity created: " + entityName);
     util.waitForSeconds(3);
      durationFiltersAndPagination(true);
+    saveTextLog("Duration filter functionality");
 //      System.out.println("Run #" + i + " completed.");
 //    }
 
@@ -180,31 +203,44 @@ public class SuperUserLoginTest {
 
   @Step("Creating an Entity User")
   private void createEntityUser() throws Exception {
+    saveTextLog("------------------Entity User Creation------------------");
     util.waitForSeconds(2);
     if (entityName == null || entityName.isEmpty()) {
       entityName = CredentialUtil.readLatestEntityName(entityListCsv);
     }
     util.waitAndClick(By.xpath("//p[text()='Manage User']"));
+    saveTextLog("Click on Manage User tab");
+    util.scrollToElement(By.xpath("//button[text()='User']"));
     util.isElementVisible(By.xpath("//button[text()='User']"));
     util.waitAndClick(By.xpath("//button[text()='User']"));
+    saveTextLog("Click on User sub tab");
     util.waitAndClick(By.xpath("//button[text()='Create User']"));
+    saveTextLog("Click on Create User button");
     String entityFullName = entityName.toUpperCase() + " USER";
     util.waitAndSendKeys(By.id("name"), entityFullName);
+    saveTextLog("Enter entity Full Name: "+entityFullName);
     entityUserEmail = entityName.toLowerCase() + "user" + RandomStringUtils.randomNumeric(4) + "@mailinator.com";
     util.waitAndSendKeys(By.id("email_id"), entityUserEmail);
-    util.waitAndSendKeys(By.id("mobile_no"), "9833505676");
+    saveTextLog("Enter entity email id: "+entityUserEmail);
+    long number = ThreadLocalRandom.current().nextLong(6000000000L, 9999999999L);
+    String mobileNumber = String.valueOf(number);
+    util.waitAndSendKeys(By.id("mobile_no"), mobileNumber);
+    saveTextLog("Enter entity mobile number: "+mobileNumber);
     WebElement entityInput = driver.findElement(By.xpath("//label[text()='Select Entity']/following::input[1]"));
     entityInput.click();
     entityInput.sendKeys(entityName);
     robot.delay(3000);
     RobotUtil.pressDownAndEnter(robot, 1000);
+    saveTextLog("Select entity from the entity dropdown: "+entityName);
     driver.findElement(By.xpath("//input[@value='NA']")).click();
+    saveTextLog("Select NA radio button");
     attachScreenshot(driver,"Entity User creation form");
     util.waitAndClick(By.xpath("//button[text()='Submit']"));
-    saveTextLog("Entity User creation successfully done");
+    saveTextLog("Click on submit button");
     Allure.step("Entity User created: " + entityUserEmail);
     util.waitForSeconds(3);
      durationFiltersAndPagination(true);
+    saveTextLog("Duration filter functionality");
   }
 
   @Step("Extracting Credentials for Entity User")
@@ -242,6 +278,7 @@ public class SuperUserLoginTest {
 
   @Step("Profile Integration for {reconType}")
   private void profileIntegration(String reconType) throws InterruptedException {
+    saveTextLog("------------------Profile Integration Creation------------------");
     util.waitForSeconds(5);
     util.waitAndClick(By.xpath("//p[text()='Profile Integration']"));
     util.waitAndClick(By.xpath("//button[text()='Create Profile']"));
@@ -320,6 +357,7 @@ public class SuperUserLoginTest {
 
   @Step("Upload Source File for {reconType}")
   private void uploadSourceFile(String reconType) throws InterruptedException {
+    saveTextLog("------------------Upload source file------------------");
     util.waitForSeconds(5);
     util.waitAndClick(By.xpath("//p[text()='Source Data']"));
     util.waitAndClick(By.xpath("//button[text()='Upload Souce File.']"));

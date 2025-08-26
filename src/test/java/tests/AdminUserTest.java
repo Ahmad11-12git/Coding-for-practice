@@ -30,15 +30,15 @@ public class AdminUserTest {
     public void adminUserFlow() throws Exception {
         loginAsSuperUser();
         configureOrEditPricing();
-//        String fetchedUserId = fetchAndStoreUserIdFromUI();
-//        loadCreditPoints(fetchedUserId);
-//        reverseLoadedCreditPoints();
-//        logOut();
+        String fetchedUserId = fetchAndStoreUserIdFromUI();
+        loadCreditPoints(fetchedUserId);
+        reverseLoadedCreditPoints();
+        logOut();
     }
 
     private void loginAsSuperUser() throws Exception {
         String userId = ConfigReader.get("UserID");
-        String password = ConfigReader.get("SITPassword");
+        String password = ConfigReader.get("Password");
         new LoginPage(driver).login(userId, password);
         new TwoFactorAuthPage(driver).enterOtp();
         util.waitAndClick(By.xpath("//button[text()='Submit']"));
