@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="Update the code for the Entity User creation">
+    <list default="true" id="c8d27444-556d-4f4a-a128-8800904bbb08" name="Changes" comment="URL Change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/BankList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/BankList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/EntityList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/EntityList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/EntityUserCredential.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/EntityUserCredential.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/NewCredential.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/NewCredential.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InputData/User_Ids.csv" beforeDir="false" afterPath="$PROJECT_DIR$/InputData/User_Ids.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/5a29be49-22f5-4b52-9ee4-fa54aa1d7879-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/5c3e4f42-8395-48e4-8347-968c28b06935-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/b7101610-2725-47a2-b100-0e233ef40f65-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/df3ee489-e0ce-4ff2-881f-1aacbf7e251a-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AdminUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/EntityLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpSuperUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SuperUserLoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +272,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755094029244</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="URL Change">
+      <option name="closed" value="true" />
+      <created>1756189384743</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756189384744</updated>
+    </task>
+    <task id="LOCAL-00009" summary="URL Change">
+      <option name="closed" value="true" />
+      <created>1756189415439</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756189415439</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,6 +308,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Update the code for the Entity User creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the code for the Entity User creation" />
+    <MESSAGE value="URL Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="URL Change" />
   </component>
 </project>
