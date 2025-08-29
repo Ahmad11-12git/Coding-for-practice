@@ -38,15 +38,15 @@ public class EntityLoginTest {
 
     @Test
     public void loginAndUpdatePasswordForEntityUser() throws Exception {
-//        loginEntityUser();
-//        resetEntityUserPassword();
-//        logout();
+        loginEntityUser();
+        resetEntityUserPassword();
+        logout();
         loginWithNewPassword();
-//        performProfileIntegration("PAYMENT");
-//        performProfileIntegration("GSTIN");
+        performProfileIntegration("PAYMENT");
+        performProfileIntegration("GSTIN");
         uploadReconFile("PAYMENT");
         uploadReconFile("GSTIN");
-//        logout();
+        logout();
     }
 
     private void loginEntityUser() {

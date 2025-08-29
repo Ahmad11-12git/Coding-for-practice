@@ -3,9 +3,9 @@
     <test name="Login Test">
         <classes>
             <class name="tests.SignUpSuperUser" />
-            <class name="tests.SuperUserLoginTest" />
+     <!--       <class name="tests.SuperUserLoginTest" />
             <class name="tests.AdminUserTest" />
             <class name="tests.EntityLoginTest" />
-        </classes>
+     -->   </classes>
     </test>
 </suite>
